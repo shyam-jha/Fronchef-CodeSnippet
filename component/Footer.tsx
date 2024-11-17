@@ -1,13 +1,16 @@
 import React from "react";
+import i1 from "@/app/logoo.png" 
+import Image from "next/image";
 
 const Footer = () => {
   return (
     <footer className="bg-black text-white py-6 flex flex-col items-center">
       {/* Logo */}
-      <img
-        src="/logoo.png"
+      <Image
+        src={i1}
+        height={150}
         alt="Logo"
-        className="rounded-lg border-[3px] border-gray-500 h-[10rem] mb-2"
+        className="rounded-lg border-[3px] border-gray-500 mb-2"
       />
       {/* Text */}
       <p className="text-center text-sm">

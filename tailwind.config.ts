@@ -1,18 +1,55 @@
 import type { Config } from "tailwindcss";
 
-export default {
+const colors = require("tailwindcss/colors");
+
+const config: Config = {
+  darkMode: ["class"],
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "./pages/**/*.{ts,tsx}",
+    "./component/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+    "./data/**/*.{ts,tsx}",
   ],
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+        white: colors.white,
+        black: colors.black,
+        zinc: colors.zinc, // for `bg-zinc-900` and `border-zinc-600`
+        green: {
+          500: "#22c55e", // `text-green-500`
+        },
+      },
+      maxWidth: {
+        "85%": "85%",
+      },
+      height: {
+        auto: "auto",
+        "96": "24rem", // 384px equivalent
+      },
+      maxHeight: {
+        "96": "24rem", // 384px equivalent
+      },
+      borderRadius: {
+        lg: "0.5rem", // Default large radius
+      },
+      padding: {
+        1: "0.25rem",
+        4: "1rem",
+      },
+      fontSize: {
+        lg: "1.125rem", // Text size
+      },
+      spacing: {
+        "1/2": "50%", // For `translate-y-1/2`
+      },
+      transitionTimingFunction: {
+        "transition-all": "all 0.3s ease", // Hover transitions
       },
     },
   },
   plugins: [],
-} satisfies Config;
+};
+
+export default config;
